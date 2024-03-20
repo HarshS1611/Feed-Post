@@ -3,6 +3,7 @@ import axios from 'axios';
 import Sidebar from "../components/sidebar";
 import Search from "../components/search";
 import { useParams } from "react-router-dom";
+import { BsTwitterX } from "react-icons/bs";
 
 
 const UserDetails = () => {
@@ -26,11 +27,15 @@ const UserDetails = () => {
     }, [data])
 
     return (
-        <div className="flex h-[870px] gap-10 justify-center my-10 ml-16">
-            <div className="flex flex-col gap-5 justify-start">
+        <div className="flex flex-col lg:flex-row h-[870px] gap-10 justify-center my-10 mx-5 lg:ml-16">
+            <div className="hidden lg:block flex flex-col gap-5 justify-start">
             <Sidebar />
-            <div className="mr-10 xl:hidden"><Search/></div>
+            {/* <div className="mr-10 xl:hidden"><Sidebar/></div> */}
             </div>
+            <a href="/" className="flex items-center mx-5 lg:hidden block ">
+                <BsTwitterX className="w-8 h-8"/>
+            
+            </a>
             <div className="overflow-auto xl:w-[40%]">
 
 

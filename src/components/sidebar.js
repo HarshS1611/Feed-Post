@@ -9,7 +9,7 @@ const Sidebar = () => {
             <a href="/">
                 <BsTwitterX className="w-8 h-8" />
             </a>
-            <a className="flex gap-2 items-center text-xl font-bold" href="/">
+            <a className="flex gap-2 mb-10 items-center text-xl font-bold" href="/">
              <MdHome className="w-6 h-6"/>   Home
             </a></div>
     )

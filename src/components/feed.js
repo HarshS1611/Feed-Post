@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from 'axios';
+import Search from "./search";
+import Sidebar from "./sidebar";
+import { BsTwitterX } from "react-icons/bs";
 
 const Feed = () => {
     const [data, setData] = useState([]);
@@ -22,7 +25,12 @@ const Feed = () => {
 
     return (
         <div className="overflow-auto  xl:w-[40%] -mt-10">
+              <a href="/" className="flex items-center my-10 mx-5 lg:hidden block ">
+                <BsTwitterX className="w-8 h-8"/>
+            
+            </a>
             <p className="font-bold border-[0.3px] border-stone-700 px-4 py-5 text-2xl">For You</p>
+            
             <div className="border-x-[0.3px] border-stone-700 ">
             
             {data && userData ? (<div>
@@ -38,7 +46,7 @@ const Feed = () => {
                             <div className="ml-16 -mt-2">{(feed.body).substring(0, 50)} ...... more</div>
 
                         </a>
-                        <a href={`/users/${feed.userId}`} className="absolute right-0 mb-5 px-4 hover:border-stone-400 hover:rounded-2xl hover:border-[1px]">
+                        <a href={`/users/${userData[feed.userId] && userData[feed.userId].id}`} className="absolute right-0 mb-5 px-4 hover:border-stone-400 hover:rounded-2xl hover:border-[1px]">
                             <span className=" text-gray-400">By : </span> {userData[feed.userId] && userData[feed.userId].name}
                             </a>
                     </div>

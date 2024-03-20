@@ -3,6 +3,7 @@ import axios from 'axios';
 import Sidebar from "../components/sidebar";
 import Search from "../components/search";
 import { useParams } from "react-router-dom";
+import { BsTwitterX } from "react-icons/bs";
 
 
 const FeedDetails = () => {
@@ -27,11 +28,16 @@ const FeedDetails = () => {
     }, [data])
 
     return (
-        <div className="flex gap-10 h-[870px] justify-center my-10 ml-16">
-            <div className="flex flex-col gap-5 justify-start">
+        <div className="flex flex-col lg:flex-row gap-10 h-[870px] justify-center my-10 mx-5 lg:ml-16">
+             <div className="hidden lg:block flex flex-col gap-5 justify-start">
             <Sidebar />
             <div className="mr-10 xl:hidden"><Search/></div>
             </div>
+            <a href="/" className="flex items-center mx-5 lg:hidden block ">
+                <BsTwitterX className="w-8 h-8"/>
+            
+            </a>
+
             <div className="overflow-auto xl:w-[40%]">
 
             {data ? (<div className="flex flex-col border-[0.5px] rounded-2xl p-5 border-stone-700 pb-5 gap-2">
