@@ -12,8 +12,8 @@ const FeedDetails = () => {
 
 
     const fetchData = async () => {
-        const response = await axios.get(`https://jsonplaceholder.typicode.com/posts/${id}/comments`);
-        const response1 = await axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`);
+        const response = await axios.get(`${process.env.REACT_APP_API}/posts/${id}/comments`);
+        const response1 = await axios.get(`${process.env.REACT_APP_API}/posts/${id}`);
 
         console.log(response.data);
         setData(response1.data)
@@ -27,9 +27,9 @@ const FeedDetails = () => {
     }, [data])
 
     return (
-        <div className="flex gap-10 justify-center my-10 ml-16">
+        <div className="flex gap-10 h-[870px] justify-center my-10 ml-16">
             <Sidebar/>
-            <div className=" w-[40%]">
+            <div className="overflow-auto w-[40%]">
 
             {data ? (<div className="flex flex-col border-[0.5px] rounded-2xl p-5 border-stone-700 pb-5 gap-2">
                 <div><span className="text-gray-400">UserId : </span>{data.userId}</div>

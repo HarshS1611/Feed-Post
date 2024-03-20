@@ -5,7 +5,7 @@ import { MdHome } from "react-icons/md";
 const Sidebar = () => {
     return (
 
-        <div className="flex flex-col gap-10">
+        <div className="flex flex-col gap-10 mr-10">
             <a href="/">
                 <BsTwitterX className="w-8 h-8" />
             </a>

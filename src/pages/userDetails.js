@@ -11,8 +11,8 @@ const UserDetails = () => {
     const { id } = useParams();
 
     const fetchData = async () => {
-        const response = await axios.get(`https://jsonplaceholder.typicode.com/users/${id}/posts`);
-        const userResponse = await axios.get(`https://jsonplaceholder.typicode.com/users`)
+        const response = await axios.get(`${process.env.REACT_APP_API}/users/${id}/posts`);
+        const userResponse = await axios.get(`${process.env.REACT_APP_API}/users`)
 
         console.log(userResponse.data);
         setUserData(userResponse.data)
@@ -26,9 +26,9 @@ const UserDetails = () => {
     }, [data])
 
     return (
-        <div className="flex gap-10 justify-center my-10 ml-16">
+        <div className="flex h-[870px] gap-10 justify-center my-10 ml-16">
             <Sidebar />
-            <div className=" w-[40%]">
+            <div className="overflow-auto w-[40%]">
 
                 {
                     userData && userData.map((user,idx) => {

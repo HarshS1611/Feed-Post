@@ -10,7 +10,7 @@ const Search = () => {
     const handleSearch = async (input) => {
         let response;
         if (!isNaN(input) && input <=100) {
-            response = await axios.get(`https://jsonplaceholder.typicode.com/posts/${input}`);
+            response = await axios.get(`${process.env.REACT_APP_API}/posts/${input}`);
         } 
         if(response){
             setSearchResults([response.data]);

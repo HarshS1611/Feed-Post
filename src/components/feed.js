@@ -6,8 +6,8 @@ const Feed = () => {
     const [userData, setUserData] = useState([]);
 
     const fetchData = async () => {
-        const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
-        const userResponse = await axios.get(`https://jsonplaceholder.typicode.com/users`)
+        const response = await axios.get(`${process.env.REACT_APP_API}/posts`);
+        const userResponse = await axios.get(`${process.env.REACT_APP_API}/users`)
 
         console.log(userResponse.data[0].name);
         setData(response.data)
@@ -21,8 +21,8 @@ const Feed = () => {
     }, [data])
 
     return (
-        <div className="w-[40%]">
-            <p className="font-bold text-2xl">For You</p>
+        <div className="overflow-auto w-[40%] -mt-10">
+            <p className="font-bold border-[0.3px] border-stone-700 px-4 py-5 text-2xl">For You</p>
             <div className="border-x-[0.3px] border-stone-700 ">
             
             {data && userData ? (<div>
