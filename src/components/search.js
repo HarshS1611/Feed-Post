@@ -5,8 +5,6 @@ import { CiSearch } from "react-icons/ci";
 
 const Search = () => {
     const [searchResults, setSearchResults] = useState([]);
-    const [postId, setPostId] = useState('')
-
     const handleSearch = async (input) => {
         let response;
         if (!isNaN(input) && input <=100) {
@@ -20,9 +18,9 @@ const Search = () => {
     }
 
     return (
-        <div className="text-white w-[20%]">
+        <div className="text-white w-56 -ml-10 xl:ml-1 xl:w-[50%]">
             <div>
-                <div className="flex items-center bg-gray-600 rounded-full w-max">
+                <div className="flex items-center bg-gray-600 rounded-full w-20 xl:w-max">
                 <CiSearch className="w-6 h-6 ml-4 text-gray-50"/>
                 <input className="text-white bg-gray-600 p-4 rounded-full focus-none outline-none" type="text" placeholder="Search by postId" onChange={(e) => handleSearch(e.target.value)} />
                 </div>

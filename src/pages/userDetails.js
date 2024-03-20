@@ -27,8 +27,12 @@ const UserDetails = () => {
 
     return (
         <div className="flex h-[870px] gap-10 justify-center my-10 ml-16">
+            <div className="flex flex-col gap-5 justify-start">
             <Sidebar />
-            <div className="overflow-auto w-[40%]">
+            <div className="mr-10 xl:hidden"><Search/></div>
+            </div>
+            <div className="overflow-auto xl:w-[40%]">
+
 
                 {
                     userData && userData.map((user,idx) => {
@@ -71,7 +75,9 @@ const UserDetails = () => {
                 </div>)
                     : <>Loading...</>}
             </div>
+            <div className="hidden xl:block ">
             <Search />
+            </div>
         </div>
     )
 }

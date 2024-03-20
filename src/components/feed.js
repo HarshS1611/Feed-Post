@@ -21,7 +21,7 @@ const Feed = () => {
     }, [data])
 
     return (
-        <div className="overflow-auto w-[40%] -mt-10">
+        <div className="overflow-auto  xl:w-[40%] -mt-10">
             <p className="font-bold border-[0.3px] border-stone-700 px-4 py-5 text-2xl">For You</p>
             <div className="border-x-[0.3px] border-stone-700 ">
             
